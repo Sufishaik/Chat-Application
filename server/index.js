@@ -17,18 +17,7 @@ app.use("/upload/channelProfiles", express.static("upload/channelProfiles"))
 app.use("/upload/files", express.static("upload/files"))
 const PORT = process.env.PORT || 3002;
 const databaseURL = process.env.DATABASE_URL;
-// current working directory deployment
-const _dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(_dirname1, "/chat-app/build")));
-    app.get("*", (req, res) => {
-        res.sendFile()
-    })
-} else {
-    app.get("/", (req, res) => {
-        res.send("API is running")
-    })
-}
+
 mongoose.connect(databaseURL).then(() => console.log('Connected to database successfully')).catch((err) => console.log("Err", err));
 app.use(cors({
     origin: process.env.ORIGIN,
