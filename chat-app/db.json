@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "location": "India",
+      "open_to_working": "Anywhere in India",
+      "title": "Job Preferences",
+      "current_salary": "44",
+      "notice_period": "15 days",
+      "id": 1
+    },
+    {
+      "current_role": "Mobile Development",
+      "skills": [
+        "React"
+      ],
+      "languages": [
+        "Urdu"
+      ],
+      "title": "Skills",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "Work Experience",
+      "year_of_exp": "1",
+      "job_title": "Web Development",
+      "company_name": "Atomic Loops",
+      "industry_exp": "Computer Software / IT / Internet"
+    },
+    {
+      "id": 4,
+      "title": "Education",
+      "university_name": "Savitribai Phule Pune University, Pune",
+      "degree": "BSc in Computer Science",
+      "year_of_passing": "2022"
+    },
+    {
+      "id": 5,
+      "title": "Diversity information",
+      "gender": "Male",
+      "disability_status": "not specified",
+      "work_permit": "India Only"
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "title": "Skills",
+      "skill": "HTML, CSS, Javascript",
+      "languages": "English"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
