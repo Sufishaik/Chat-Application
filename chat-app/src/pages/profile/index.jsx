@@ -39,7 +39,7 @@ export const Profile = () => {
         if (validateProfile()) {
             try {
                 const resp = await axios.post(
-                    'http://localhost:3004/api/auth/updateProfile',
+                    'https://chat-application-4std.onrender.com/api/auth/updateProfile',
                     { firstName, lastName },
                     { withCredentials: true },
 
@@ -83,7 +83,7 @@ export const Profile = () => {
 
             try {
                 const resp = await axios.post(
-                    'http://localhost:3004/api/auth/addProfileImg',
+                    'https://chat-application-4std.onrender.com/api/auth/addProfileImg',
                     formData,
                     { withCredentials: true },
 
@@ -95,7 +95,7 @@ export const Profile = () => {
 
                     if (data?.image) {
 
-                        const imageUrl = `http://localhost:3004/${data.image}`;
+                        const imageUrl = `https://chat-application-4std.onrender.com/${data.image}`;
                         dispatch(setUserInfo({ ...userInfo, image: data.image }));
                         setImage(imageUrl);
 
@@ -120,7 +120,7 @@ export const Profile = () => {
     const handleDeleteImg = async () => {
         try {
             const resp = await axios.delete(
-                'http://localhost:3004/api/auth/deleteImg',
+                'https://chat-application-4std.onrender.com/api/auth/deleteImg',
 
                 { withCredentials: true },
 
@@ -143,14 +143,14 @@ export const Profile = () => {
             setFirstName(userInfo?.firstName || "");
             setLastName(userInfo?.lastName || "");
             if (userInfo?.image) {
-                setImage(`http://localhost:3004/${userInfo?.image}`);
+                setImage(`https://chat-application-4std.onrender.com/${userInfo?.image}`);
             }
         }
     }, [userInfo])
 
     useEffect(() => {
         if (userInfo?.image) {
-            setImage(`http://localhost:3004/${userInfo.image}`);
+            setImage(`https://chat-application-4std.onrender.com/${userInfo.image}`);
         }
     }, [userInfo.image]); // De
     return (

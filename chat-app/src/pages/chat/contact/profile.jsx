@@ -15,7 +15,7 @@ export const ProfileContact = () => {
     const handleLogout = async () => {
         try {
             const resp = await axios.post(
-                'http://localhost:3004/api/auth/logout',
+                'https://chat-application-4std.onrender.com/api/auth/logout',
                 {},
                 { withCredentials: true },
 
@@ -35,7 +35,7 @@ export const ProfileContact = () => {
             <div className="flex h-15 items-center justify-center mx-[0px auto] pr-10 gap-4 p-2 bg-[#2a2b33] w-full pl-10 absolute bottom-0 cursor-pointer">
                 <Avatar className="h-12 w-12  rounded-full overflow-hidden">
                     {
-                        userInfo.image ? <AvatarImage src={`http://localhost:3004/${userInfo.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
+                        userInfo.image ? <AvatarImage src={`https://chat-application-4std.onrender.com/${userInfo.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
 
                             {userInfo.firstName ? userInfo.firstName.split("").shift() : userInfo?.email?.split("").shift()}
                         </div>

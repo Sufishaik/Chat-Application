@@ -29,7 +29,7 @@ export const ModalNewContact = () => {
     const searchContacts = async (searchTerm) => {
         try {
             if (searchTerm.length > 0) {
-                const resp = await fetch('http://localhost:3004/api/auth/searchTerm', {
+                const resp = await fetch('https://chat-application-4std.onrender.com/api/auth/searchTerm', {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -108,7 +108,7 @@ export const ModalNewContact = () => {
                                                 <div className="w-12 h-12 relative">
                                                     <Avatar className="h-12 w-12 rounded-full overflow-hidden">
                                                         {
-                                                            item?.image ? <AvatarImage className="object-cover w-full h-full bg-black " src={`http://localhost:3004/${item?.image}`} /> : <div className="uppercase h-12 w-12 text-lg border-[1px] flex items-center justify-center">{item?.firstName ? item?.firstName.split("").shift() : item?.email?.split("").shift()}</div>
+                                                            item?.image ? <AvatarImage className="object-cover w-full h-full bg-black " src={`https://chat-application-4std.onrender.com/${item?.image}`} /> : <div className="uppercase h-12 w-12 text-lg border-[1px] flex items-center justify-center">{item?.firstName ? item?.firstName.split("").shift() : item?.email?.split("").shift()}</div>
                                                         }
                                                     </Avatar>
                                                 </div>

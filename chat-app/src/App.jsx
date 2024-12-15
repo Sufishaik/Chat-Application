@@ -40,7 +40,7 @@ function App() {
       <RefineKbarProvider>
         <DevtoolsProvider>
           <Refine
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            dataProvider={dataProvider("https://chat-application-4std.onrender.com")}
             routerProvider={routerBindings}
             // authProvider={authProvider}
             options={{
