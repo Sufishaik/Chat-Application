@@ -28,7 +28,7 @@ function Channel({ openChannelModal, setOpenChannelModal }) {
 
             try {
                 const resp = await axios.get(
-                    'https://chat-application-4std.onrender.com/api/contacts/getAllContacts',
+                    'http://localhost:3004/api/contacts/getAllContacts',
 
                     {
                         headers: {
@@ -57,7 +57,7 @@ function Channel({ openChannelModal, setOpenChannelModal }) {
         try {
             if (selectedContacts.length > 0) {
                 const resp = await axios.post(
-                    'https://chat-application-4std.onrender.com/api/channel/createChannel',
+                    'http://localhost:3004/api/channel/createChannel',
                     {
 
                         members: selectedContacts?.map?.((contact) => contact.value)

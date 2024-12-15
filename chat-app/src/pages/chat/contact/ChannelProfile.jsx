@@ -42,7 +42,7 @@ export const CHannelProfile = () => {
         if (validateProfile()) {
             try {
                 const resp = await axios.post(
-                    'https://chat-application-4std.onrender.com/api/channel/updateName',
+                    'http://localhost:3004/api/channel/updateName',
                     { name: channelName, channelId: channels?._id },
                     { withCredentials: true },
 
@@ -88,7 +88,7 @@ export const CHannelProfile = () => {
             formData.append('channelId', channels?._id);
             try {
                 const resp = await axios.post(
-                    'https://chat-application-4std.onrender.com/api/channel/addChannelImg',
+                    'http://localhost:3004/api/channel/addChannelImg',
                     formData,
                     { withCredentials: true },
                 );
@@ -96,7 +96,7 @@ export const CHannelProfile = () => {
                 if (resp.status === 200) {
                     const data = resp.data;
                     if (data?.image) {
-                        const imageUrl = `https://chat-application-4std.onrender.com/${data.image}`;
+                        const imageUrl = `http://localhost:3004/${data.image}`;
                         const updatedChannels = { ...channels, image: resp?.data?.image };
                         dispatch(addchannel(updatedChannels))
                         setImage(imageUrl);
@@ -122,7 +122,7 @@ export const CHannelProfile = () => {
     const handleDeleteImg = async () => {
         try {
             const resp = await axios.delete(
-                'https://chat-application-4std.onrender.com/api/auth/deleteImg',
+                'http://localhost:3004/api/auth/deleteImg',
 
                 { withCredentials: true },
 
@@ -143,7 +143,7 @@ export const CHannelProfile = () => {
 
     useEffect(() => {
         if (channels?.image) {
-            setImage(`https://chat-application-4std.onrender.com/${channels.image}`);
+            setImage(`http://localhost:3004/${channels.image}`);
         }
     }, [channels?.image]);
     useEffect(() => {

@@ -56,7 +56,7 @@ export const DirectMsg = () => {
                         >
                             <Avatar className="h-12 w-12  rounded-full overflow-hidden">
                                 {
-                                    types.image ? <AvatarImage src={`https://chat-application-4std.onrender.com/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
+                                    types.image ? <AvatarImage src={`http://localhost:3004/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
                                         {
                                             types.firstName && types.lastName
                                                 ? `${types.firstName.toUpperCase()}${types.lastName.toUpperCase()}`
