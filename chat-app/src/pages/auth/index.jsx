@@ -95,7 +95,7 @@ export const Auth = () => {
                 if (res.status === 200) {
                     const response = await res.json();
                     dispatch(setUserInfo(response.user))
-                    navigate("/chat")
+                    navigate("/")
                 } else {
                     toast.error("An error occurred")
                 }

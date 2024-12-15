@@ -31,7 +31,7 @@ function App() {
   };
   const AuthRoute = ({ children }) => {
     const isAuthenticated = !!userInfo;
-    return isAuthenticated ? <Navigate to="/chat" /> : children;
+    return isAuthenticated ? <Navigate to="/" /> : children;
   }
 
 
@@ -54,7 +54,7 @@ function App() {
               <Route path="/auth" element={<AuthRoute>
                 <Auth />
               </AuthRoute>} />
-              <Route path="/chat" element={<PrivateRoute>
+              <Route path="/" element={<PrivateRoute>
                 <Chat />
                 {/* <ProfileInsta /> */}
               </PrivateRoute>} />

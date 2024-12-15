@@ -51,7 +51,7 @@ export const Profile = () => {
                     dispatch(setUserInfo({ ...resp.data }));
                     toast.success("Profile updated successfully");
 
-                    navigate("/chat")
+                    navigate("/")
 
 
                 }

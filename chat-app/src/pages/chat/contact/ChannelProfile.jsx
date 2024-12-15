@@ -56,7 +56,7 @@ export const CHannelProfile = () => {
                     toast.success("Name added successfully");
 
 
-                    navigate("/chat")
+                    navigate("/")
 
 
                 }
