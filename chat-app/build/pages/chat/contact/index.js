@@ -20,7 +20,7 @@ const Contacts = () => {
     const fetchData = async () => {
       try {
         // Fetch contacts for DM
-        const contactResp = await _axios.default.get('https://chat-application-4std.onrender.com/api/contacts/getContactsForDM', {
+        const contactResp = await _axios.default.get('http://localhost:3004/api/contacts/getContactsForDM', {
           headers: {
             'Content-Type': 'application/json'
           },
@@ -29,7 +29,7 @@ const Contacts = () => {
         const contacts = contactResp.data?.contacts || [];
 
         // Fetch user channels
-        const channelResp = await _axios.default.get('https://chat-application-4std.onrender.com/api/channel/getUserChannel', {
+        const channelResp = await _axios.default.get('http://localhost:3004/api/channel/getUserChannel', {
           headers: {
             'Content-Type': 'application/json'
           },

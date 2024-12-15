@@ -88,7 +88,7 @@ const SendBTN = () => {
         const formData = new FormData();
         formData.append("file", file);
         dispatch((0, _chatIndex.setIsUploading)(true));
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/message/upload-file', formData, {
+        const resp = await _axios.default.post('http://localhost:3004/api/message/upload-file', formData, {
           withCredentials: true,
           onUploadProgress: data => {
             dispatch((0, _chatIndex.setFileUploadProgress)(Math.round(100 * data.loaded / data.total)));

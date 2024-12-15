@@ -39,7 +39,7 @@ const Profile = () => {
   const handleSave = async () => {
     if (validateProfile()) {
       try {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/auth/updateProfile', {
+        const resp = await _axios.default.post('http://localhost:3004/api/auth/updateProfile', {
           firstName,
           lastName
         }, {
@@ -70,13 +70,13 @@ const Profile = () => {
       const formData = new FormData();
       formData.append('profileImg', file);
       try {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/auth/addProfileImg', formData, {
+        const resp = await _axios.default.post('http://localhost:3004/api/auth/addProfileImg', formData, {
           withCredentials: true
         });
         if (resp.status === 200) {
           const data = resp.data;
           if (data?.image) {
-            const imageUrl = `https://chat-application-4std.onrender.com/${data.image}`;
+            const imageUrl = `http://localhost:3004/${data.image}`;
             dispatch((0, _reducers.setUserInfo)({
               ...userInfo,
               image: data.image
@@ -100,7 +100,7 @@ const Profile = () => {
   };
   const handleDeleteImg = async () => {
     try {
-      const resp = await _axios.default.delete('https://chat-application-4std.onrender.com/api/auth/deleteImg', {
+      const resp = await _axios.default.delete('http://localhost:3004/api/auth/deleteImg', {
         withCredentials: true
       });
       if (resp.status === 200) {
@@ -120,13 +120,13 @@ const Profile = () => {
       setFirstName(userInfo?.firstName || "");
       setLastName(userInfo?.lastName || "");
       if (userInfo?.image) {
-        setImage(`https://chat-application-4std.onrender.com/${userInfo?.image}`);
+        setImage(`http://localhost:3004/${userInfo?.image}`);
       }
     }
   }, [userInfo]);
   (0, _react.useEffect)(() => {
     if (userInfo?.image) {
-      setImage(`https://chat-application-4std.onrender.com/${userInfo.image}`);
+      setImage(`http://localhost:3004/${userInfo.image}`);
     }
   }, [userInfo.image]); // De
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {

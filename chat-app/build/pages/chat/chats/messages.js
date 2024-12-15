@@ -37,7 +37,7 @@ const Messages = () => {
   (0, _react.useEffect)(() => {
     const getMessages = async () => {
       try {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/auth/getMessages', {
+        const resp = await _axios.default.post('http://localhost:3004/api/auth/getMessages', {
           id: selectedChatData._id
         }, {
           headers: {
@@ -58,7 +58,7 @@ const Messages = () => {
     };
     const getChannelMessages = async () => {
       try {
-        const resp = await _axios.default.get(`https://chat-application-4std.onrender.com/api/channel/getChannelMessage/${selectedChatData._id}`, {
+        const resp = await _axios.default.get(`http://localhost:3004/api/channel/getChannelMessage/${selectedChatData._id}`, {
           headers: {
             'Content-Type': 'application/json'
           },
@@ -117,7 +117,7 @@ const Messages = () => {
         setImageURL(msg.fileUrl);
       }
     }, /*#__PURE__*/React.createElement("img", {
-      src: `https://chat-application-4std.onrender.com/${msg.fileUrl}`,
+      src: `http://localhost:3004/${msg.fileUrl}`,
       height: 200,
       width: 200,
       alt: ""
@@ -136,7 +136,7 @@ const Messages = () => {
     }), showImage && /*#__PURE__*/React.createElement("div", {
       className: "fixed top-10  h-[60vh] w-[50vw] flex items-center justify-center backdrop-blur-lg flex-col"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
-      src: `https://chat-application-4std.onrender.com/${imageURL}`,
+      src: `http://localhost:3004/${imageURL}`,
       className: "h-[30vh] w-full bg-cover",
       alt: ""
     })), /*#__PURE__*/React.createElement("div", {

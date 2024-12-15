@@ -48,7 +48,7 @@ const Auth = () => {
   const handleSignup = async () => {
     try {
       if (validateSignUp()) {
-        const resp = await fetch('https://chat-application-4std.onrender.com/api/auth/signup', {
+        const resp = await fetch('http://localhost:3004/api/auth/signup', {
           method: 'POST',
           // Specify the request method
           credentials: 'include',
@@ -79,7 +79,7 @@ const Auth = () => {
   };
   const handleLogin = () => {
     if (validateLogin()) {
-      fetch('https://chat-application-4std.onrender.com/api/auth/login', {
+      fetch('http://localhost:3004/api/auth/login', {
         method: 'POST',
         credentials: 'include',
         headers: {

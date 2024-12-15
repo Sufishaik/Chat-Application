@@ -37,11 +37,11 @@ function App() {
     } = _ref2;
     const isAuthenticated = !!userInfo;
     return isAuthenticated ? /*#__PURE__*/React.createElement(_reactRouterDom.Navigate, {
-      to: "/"
+      to: "/chat"
     }) : children;
   };
   return /*#__PURE__*/React.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/React.createElement(_kbar.RefineKbarProvider, null, /*#__PURE__*/React.createElement(_devtools.DevtoolsProvider, null, /*#__PURE__*/React.createElement(_core.Refine, {
-    dataProvider: (0, _simpleRest.default)("https://chat-application-4std.onrender.com"),
+    dataProvider: (0, _simpleRest.default)("https://api.fake-rest.refine.dev"),
     routerProvider: _reactRouterV.default
     // authProvider={authProvider}
     ,
@@ -55,7 +55,7 @@ function App() {
     path: "/auth",
     element: /*#__PURE__*/React.createElement(AuthRoute, null, /*#__PURE__*/React.createElement(_auth.Auth, null))
   }), /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
-    path: "/",
+    path: "/chat",
     element: /*#__PURE__*/React.createElement(PrivateRoute, null, /*#__PURE__*/React.createElement(_chat.Chat, null))
   }), /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
     path: "/profile",

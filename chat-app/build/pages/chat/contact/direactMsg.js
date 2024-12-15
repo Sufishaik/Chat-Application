@@ -53,7 +53,7 @@ const DirectMsg = () => {
   }, /*#__PURE__*/React.createElement(_avatar.Avatar, {
     className: "h-12 w-12  rounded-full overflow-hidden"
   }, types.image ? /*#__PURE__*/React.createElement(_avatar.AvatarImage, {
-    src: `https://chat-application-4std.onrender.com/${types?.image}`,
+    src: `http://localhost:3004/${types?.image}`,
     className: "object-cover w-full h-full bg-black"
   }) : /*#__PURE__*/React.createElement("div", {
     className: `uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `

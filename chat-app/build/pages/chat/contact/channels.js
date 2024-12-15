@@ -32,7 +32,7 @@ function Channel(_ref) {
   (0, _react.useEffect)(() => {
     const getMessages = async () => {
       try {
-        const resp = await _axios.default.get('https://chat-application-4std.onrender.com/api/contacts/getAllContacts', {
+        const resp = await _axios.default.get('http://localhost:3004/api/contacts/getAllContacts', {
           headers: {
             'Content-Type': 'application/json'
           },
@@ -52,7 +52,7 @@ function Channel(_ref) {
   const handleChannelCreate = async () => {
     try {
       if (selectedContacts.length > 0) {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/channel/createChannel', {
+        const resp = await _axios.default.post('http://localhost:3004/api/channel/createChannel', {
           members: selectedContacts?.map?.(contact => contact.value)
         }, {
           headers: {

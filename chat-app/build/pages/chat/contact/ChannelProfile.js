@@ -38,7 +38,7 @@ const CHannelProfile = () => {
   const handleSave = async () => {
     if (validateProfile()) {
       try {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/channel/updateName', {
+        const resp = await _axios.default.post('http://localhost:3004/api/channel/updateName', {
           name: channelName,
           channelId: channels?._id
         }, {
@@ -72,13 +72,13 @@ const CHannelProfile = () => {
       formData.append('channelImg', file);
       formData.append('channelId', channels?._id);
       try {
-        const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/channel/addChannelImg', formData, {
+        const resp = await _axios.default.post('http://localhost:3004/api/channel/addChannelImg', formData, {
           withCredentials: true
         });
         if (resp.status === 200) {
           const data = resp.data;
           if (data?.image) {
-            const imageUrl = `https://chat-application-4std.onrender.com/${data.image}`;
+            const imageUrl = `http://localhost:3004/${data.image}`;
             const updatedChannels = {
               ...channels,
               image: resp?.data?.image
@@ -103,7 +103,7 @@ const CHannelProfile = () => {
   };
   const handleDeleteImg = async () => {
     try {
-      const resp = await _axios.default.delete('https://chat-application-4std.onrender.com/api/auth/deleteImg', {
+      const resp = await _axios.default.delete('http://localhost:3004/api/auth/deleteImg', {
         withCredentials: true
       });
       if (resp.status === 200) {
@@ -116,7 +116,7 @@ const CHannelProfile = () => {
   };
   (0, _react.useEffect)(() => {
     if (channels?.image) {
-      setImage(`https://chat-application-4std.onrender.com/${channels.image}`);
+      setImage(`http://localhost:3004/${channels.image}`);
     }
   }, [channels?.image]);
   (0, _react.useEffect)(() => {

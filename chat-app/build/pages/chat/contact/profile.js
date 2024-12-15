@@ -19,7 +19,7 @@ const ProfileContact = () => {
   const dispatch = (0, _reactRedux.useDispatch)();
   const handleLogout = async () => {
     try {
-      const resp = await _axios.default.post('https://chat-application-4std.onrender.com/api/auth/logout', {}, {
+      const resp = await _axios.default.post('http://localhost:3004/api/auth/logout', {}, {
         withCredentials: true
       });
       if (resp.status === 200) {
@@ -36,7 +36,7 @@ const ProfileContact = () => {
   }, /*#__PURE__*/React.createElement(_avatar.Avatar, {
     className: "h-12 w-12  rounded-full overflow-hidden"
   }, userInfo.image ? /*#__PURE__*/React.createElement(_avatar.AvatarImage, {
-    src: `https://chat-application-4std.onrender.com/${userInfo.image}`,
+    src: `http://localhost:3004/${userInfo.image}`,
     className: "object-cover w-full h-full bg-black"
   }) : /*#__PURE__*/React.createElement("div", {
     className: `uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `

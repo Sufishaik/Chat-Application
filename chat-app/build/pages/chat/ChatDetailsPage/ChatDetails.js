@@ -30,7 +30,7 @@ const ChatDetails = () => {
   };
   (0, _react.useEffect)(() => {
     if (selectedChatData?.image) {
-      setImage(`https://chat-application-4std.onrender.com/${selectedChatData.image}`);
+      setImage(`http://localhost:3004/${selectedChatData.image}`);
     }
   }, [selectedChatData?.image]);
   (0, _react.useEffect)(() => {
@@ -45,7 +45,7 @@ const ChatDetails = () => {
   }, [selectedChatMessages]);
   (0, _react.useEffect)(() => {
     const getGroupDetails = async () => {
-      const resp = await _axios.default.get(`https://chat-application-4std.onrender.com/api/channel/getUserChannelsWithMembers`, {
+      const resp = await _axios.default.get(`http://localhost:3004/api/channel/getUserChannelsWithMembers`, {
         params: {
           channelId: selectedChatData?._id
         },
@@ -114,7 +114,7 @@ const ChatDetails = () => {
     return /*#__PURE__*/React.createElement(React.Fragment, null, item.messageType === "file" && checkIfImage(item.fileUrl) ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "cursor-pointer flex border-[1px] p-2"
     }, /*#__PURE__*/React.createElement("img", {
-      src: `https://chat-application-4std.onrender.com/${item.fileUrl}`,
+      src: `http://localhost:3004/${item.fileUrl}`,
       height: 50,
       width: 50,
       alt: ""
@@ -140,7 +140,7 @@ const ChatDetails = () => {
   }, /*#__PURE__*/React.createElement(_avatar.Avatar, {
     className: "h-12 w-12  rounded-full overflow-hidden"
   }, types.image ? /*#__PURE__*/React.createElement(_avatar.AvatarImage, {
-    src: `https://chat-application-4std.onrender.com/${types?.image}`,
+    src: `http://localhost:3004/${types?.image}`,
     className: "object-cover w-full h-full bg-black"
   }) : /*#__PURE__*/React.createElement("div", {
     className: `uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `
