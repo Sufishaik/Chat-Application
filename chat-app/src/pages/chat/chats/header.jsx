@@ -18,7 +18,7 @@ export const Header = () => {
                     }}>
                         <Avatar className="h-12 w-12  rounded-full overflow-hidden ">
                             {
-                                types && types?.image ? <AvatarImage src={`http://localhost:3004/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
+                                types && types?.image ? <AvatarImage src={`https://chat-application-hajy.onrender.com/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
                                     {
                                         selectedChatType === "contact" ?
                                             types?.firstName ? types.firstName.split("").shift() : types?.email?.split("").shift()

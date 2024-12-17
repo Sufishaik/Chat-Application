@@ -57,7 +57,7 @@ export const ChatDetails = () => {
     useEffect(() => {
         const getGroupDetails = async () => {
             const resp = await axios.get(
-                `http://localhost:3004/api/channel/getUserChannelsWithMembers`,
+                `https://chat-application-hajy.onrender.com/api/channel/getUserChannelsWithMembers`,
 
                 {
                     params: { channelId: selectedChatData?._id },
@@ -89,7 +89,7 @@ export const ChatDetails = () => {
             formData.append('channelId', selectedChatData?._id);
             try {
                 const resp = await axios.post(
-                    'http://localhost:3004/api/channel/addChannelImg',
+                    'https://chat-application-hajy.onrender.com/api/channel/addChannelImg',
                     formData,
                     { withCredentials: true },
                 );
@@ -116,7 +116,7 @@ export const ChatDetails = () => {
     const handleDeleteImg = async () => {
         try {
             const resp = await axios.post(
-                'http://localhost:3004/api/channel/removeChannelImage',
+                'https://chat-application-hajy.onrender.com/api/channel/removeChannelImage',
                 {
                     channelId: selectedChatData?._id,
                 },
@@ -136,7 +136,7 @@ export const ChatDetails = () => {
     }
     useEffect(() => {
         if (selectedChatData?.image) {
-            setImage(`http://localhost:3004/${selectedChatData?.image}`);
+            setImage(`https://chat-application-hajy.onrender.com/${selectedChatData?.image}`);
         }
     }, [selectedChatData?.image, selectedChatData, dispatch, setSelectedChatData, contacts, setContacts]);
     const validateProfile = () => {
@@ -151,7 +151,7 @@ export const ChatDetails = () => {
         if (validateProfile()) {
             try {
                 const resp = await axios.post(
-                    'http://localhost:3004/api/channel/updateChannelName',
+                    'https://chat-application-hajy.onrender.com/api/channel/updateChannelName',
                     { name: editedName, channelId: selectedChatData?._id },
                     { withCredentials: true },
                 );
@@ -295,7 +295,7 @@ export const ChatDetails = () => {
                                                     item.messageType === "file" && checkIfImage(item.fileUrl) ?
                                                         <>
                                                             <div className="cursor-pointer flex border-[1px] p-2" >
-                                                                <img src={`http://localhost:3004/${item.fileUrl}`} height={50} width={50} alt="" />
+                                                                <img src={`https://chat-application-hajy.onrender.com/${item.fileUrl}`} height={50} width={50} alt="" />
                                                             </div>
 
                                                         </>
@@ -334,7 +334,7 @@ export const ChatDetails = () => {
 
                                         <Avatar className="h-12 w-12  rounded-full overflow-hidden">
                                             {
-                                                types.image ? <AvatarImage src={`http://localhost:3004/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
+                                                types.image ? <AvatarImage src={`https://chat-application-hajy.onrender.com/${types?.image}`} className='object-cover w-full h-full bg-black' /> : <div className={`uppercase h-12 w-12 text-lg boder-[1px] flex items-center justify-center `}>
                                                     {
                                                         types.firstName && types.lastName
                                                             ? `${types.firstName.toUpperCase()}${types.lastName.toUpperCase()}`

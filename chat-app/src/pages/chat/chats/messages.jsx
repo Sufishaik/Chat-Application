@@ -34,7 +34,7 @@ export const Messages = () => {
 
             try {
                 const resp = await axios.post(
-                    'http://localhost:3004/api/auth/getMessages',
+                    'https://chat-application-hajy.onrender.com/api/auth/getMessages',
                     {
                         id: selectedChatData._id
                     },
@@ -62,7 +62,7 @@ export const Messages = () => {
 
             try {
                 const resp = await axios.get(
-                    `http://localhost:3004/api/channel/getChannelMessage/${selectedChatData._id}`,
+                    `https://chat-application-hajy.onrender.com/api/channel/getChannelMessage/${selectedChatData._id}`,
 
                     {
                         headers: {
@@ -150,7 +150,7 @@ export const Messages = () => {
                                                             setShowImage(true);
                                                             setImageURL(msg.fileUrl);
                                                         }}>
-                                                            <img src={`http://localhost:3004/${msg.fileUrl}`} height={200} width={200} alt="" />
+                                                            <img src={`https://chat-application-hajy.onrender.com/${msg.fileUrl}`} height={200} width={200} alt="" />
                                                         </div>
                                                         <div className='text-xs text-gray-600'>
                                                             {moment(msg.timestamp).format("LT")}
@@ -173,7 +173,7 @@ export const Messages = () => {
                             {
                                 showImage && <div className='fixed top-10  h-[60vh] w-[50vw] flex items-center justify-center backdrop-blur-lg flex-col'>
                                     <div>
-                                        <img src={`http://localhost:3004/${imageURL}`} className='h-[30vh] w-full bg-cover' alt="" />
+                                        <img src={`https://chat-application-hajy.onrender.com/${imageURL}`} className='h-[30vh] w-full bg-cover' alt="" />
                                     </div>
                                     <div className='flex gap-5 fixed top-0 mt-5'>
                                         <button className='bg-black/20 p-3 text-2xl rounded-full hover:bg-black/50 cursor-pointer transition-all duration-300' >

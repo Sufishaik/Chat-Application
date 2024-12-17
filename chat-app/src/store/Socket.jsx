@@ -21,7 +21,7 @@ export const SocketProvider = ({ children }) => {
     useEffect(() => {
         if (userInfo) {
 
-            socket.current = io("http://localhost:3004/", {
+            socket.current = io("https://chat-application-hajy.onrender.com/", {
 
                 withCredentials: true,
                 query: { userId: userInfo?.id },

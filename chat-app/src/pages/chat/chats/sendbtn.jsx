@@ -92,7 +92,7 @@ export const SendBTN = () => {
                 formData.append("file", file);
                 dispatch(setIsUploading(true));
                 const resp = await axios.post(
-                    'http://localhost:3004/api/message/upload-file',
+                    'https://chat-application-hajy.onrender.com/api/message/upload-file',
                     formData,
                     {
 
