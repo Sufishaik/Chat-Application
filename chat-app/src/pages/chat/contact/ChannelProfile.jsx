@@ -42,7 +42,7 @@ export const CHannelProfile = () => {
         if (validateProfile()) {
             try {
                 const resp = await axios.post(
-                    'https://chat-application-hajy.onrender.com/api/channel/updateName',
+                    'https://chat-application-clit.onrender.com/api/channel/updateName',
                     { name: channelName, channelId: channels?._id },
                     { withCredentials: true },
 
@@ -88,7 +88,7 @@ export const CHannelProfile = () => {
             formData.append('channelId', channels?._id);
             try {
                 const resp = await axios.post(
-                    'https://chat-application-hajy.onrender.com/api/channel/addChannelImg',
+                    'https://chat-application-clit.onrender.com/api/channel/addChannelImg',
                     formData,
                     { withCredentials: true },
                 );
@@ -96,7 +96,7 @@ export const CHannelProfile = () => {
                 if (resp.status === 200) {
                     const data = resp.data;
                     if (data?.image) {
-                        const imageUrl = `https://chat-application-hajy.onrender.com/${data.image}`;
+                        const imageUrl = `https://chat-application-clit.onrender.com/${data.image}`;
                         const updatedChannels = { ...channels, image: resp?.data?.image };
                         dispatch(addchannel(updatedChannels))
                         setImage(imageUrl);
@@ -122,7 +122,7 @@ export const CHannelProfile = () => {
     const handleDeleteImg = async () => {
         try {
             const resp = await axios.delete(
-                'https://chat-application-hajy.onrender.com/api/auth/deleteImg',
+                'https://chat-application-clit.onrender.com/api/auth/deleteImg',
 
                 { withCredentials: true },
 
@@ -143,7 +143,7 @@ export const CHannelProfile = () => {
 
     useEffect(() => {
         if (channels?.image) {
-            setImage(`https://chat-application-hajy.onrender.com/${channels.image}`);
+            setImage(`https://chat-application-clit.onrender.com/${channels.image}`);
         }
     }, [channels?.image]);
     useEffect(() => {

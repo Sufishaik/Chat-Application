@@ -47,7 +47,7 @@ export const Auth = () => {
         try {
 
             if (validateSignUp()) {
-                const resp = await fetch('https://chat-application-hajy.onrender.com/api/auth/signup', {
+                const resp = await fetch('https://chat-application-clit.onrender.com/api/auth/signup', {
                     method: 'POST', // Specify the request method
                     credentials: 'include', // Include the credentials in the request
                     headers: {
@@ -81,7 +81,7 @@ export const Auth = () => {
 
     const handleLogin = () => {
         if (validateLogin()) {
-            fetch('https://chat-application-hajy.onrender.com/api/auth/login', {
+            fetch('https://chat-application-clit.onrender.com/api/auth/login', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

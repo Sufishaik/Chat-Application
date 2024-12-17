@@ -39,7 +39,7 @@ export const Profile = () => {
         if (validateProfile()) {
             try {
                 const resp = await axios.post(
-                    'https://chat-application-hajy.onrender.com/api/auth/updateProfile',
+                    'https://chat-application-clit.onrender.com/api/auth/updateProfile',
                     { firstName, lastName },
                     { withCredentials: true },
                 );
@@ -71,7 +71,7 @@ export const Profile = () => {
 
             try {
                 const resp = await axios.post(
-                    'https://chat-application-hajy.onrender.com/api/auth/addProfileImg',
+                    'https://chat-application-clit.onrender.com/api/auth/addProfileImg',
                     formData,
                     { withCredentials: true },
 
@@ -83,7 +83,7 @@ export const Profile = () => {
 
                     if (data?.image) {
 
-                        const imageUrl = `https://chat-application-hajy.onrender.com/${data.image}`;
+                        const imageUrl = `https://chat-application-clit.onrender.com/${data.image}`;
                         dispatch(setUserInfo({ ...userInfo, image: data.image }));
                         setImage(imageUrl);
 
@@ -108,7 +108,7 @@ export const Profile = () => {
     const handleDeleteImg = async () => {
         try {
             const resp = await axios.delete(
-                'https://chat-application-hajy.onrender.com/api/auth/deleteImg',
+                'https://chat-application-clit.onrender.com/api/auth/deleteImg',
 
                 { withCredentials: true },
 
@@ -131,14 +131,14 @@ export const Profile = () => {
             setFirstName(userInfo?.firstName || "");
             setLastName(userInfo?.lastName || "");
             if (userInfo?.image) {
-                setImage(`https://chat-application-hajy.onrender.com/${userInfo?.image}`);
+                setImage(`https://chat-application-clit.onrender.com/${userInfo?.image}`);
             }
         }
     }, [userInfo])
 
     useEffect(() => {
         if (userInfo?.image) {
-            setImage(`https://chat-application-hajy.onrender.com/${userInfo.image}`);
+            setImage(`https://chat-application-clit.onrender.com/${userInfo.image}`);
         }
     }, [userInfo.image]); // De
     return (
