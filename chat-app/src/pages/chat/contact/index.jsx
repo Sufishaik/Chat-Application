@@ -18,7 +18,7 @@ export const Contacts = () => {
             try {
                 // Fetch contacts for DM
                 const contactResp = await axios.get(
-                    'http://localhost:3004/api/contacts/getContactsForDM',
+                    'https://chat-application-hajy.onrender.com/api/contacts/getContactsForDM',
                     {
                         headers: {
                             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export const Contacts = () => {
 
                 // Fetch user channels
                 const channelResp = await axios.get(
-                    'http://localhost:3004/api/channel/getUserChannel',
+                    'https://chat-application-hajy.onrender.com/api/channel/getUserChannel',
                     {
                         headers: {
                             'Content-Type': 'application/json',
