@@ -21,7 +21,7 @@ export const SocketProvider = ({ children }) => {
     useEffect(() => {
         if (userInfo) {
 
-            socket.current = io("http://localhost:3004", {
+            socket.current = io("http://localhost:3004/", {
 
                 withCredentials: true,
                 query: { userId: userInfo?.id },

@@ -128,31 +128,67 @@ export const updateName = async (req, res, next) => {
         return res.status(500).send("Add Name Internal Server Error");
     }
 }
-
-
-export const RemoveProfileImg = async (req, res, next) => {
+export const updateChannelName = async (req, res, next) => {
     try {
-        const { userId } = req;
-        const user = await ChannelModel.findById(userId);
-        if (!user) {
-            return res.status(401).send("User not found");
 
+        const { name, channelId } = req.body;
+        if (!channelId) {
+            return res.status(400).send("Channel ID is required");
         }
 
+        const updatedUser = await ChannelModel.findOneAndUpdate(
+            { _id: channelId, admin: req.userId },
+            {
+                name: name
+            },
+            { new: true, runValidators: true });
 
-        if (user.image) {
-
-            unlinkSync(user.image);
+        if (!updatedUser) {
+            return res.status(404).send("Channel not found or you are not authorized to update it");
         }
-        user.image = null;
-        await user.save();
+        console.log("updatedUser", updatedUser)
+        return res.status(200).json({ name: updatedUser?.name })
 
-        return res.status(200).send("Profile image removed successfully");
     } catch (err) {
         console.log("Error", err);
-        return res.status(500).send("Remove Profile Image Internal Server Error");
+        return res.status(500).send("Add Name Internal Server Error");
     }
 }
+
+
+export const removeChannelImage = async (req, res, next) => {
+    try {
+        const { channelId, name } = req.body;
+        if (!channelId) {
+            return res.status(400).send("Channel ID is required");
+        }
+        // Find the channel by ID and ensure the logged-in user is the admin
+        const channel = await ChannelModel.findOne({ _id: channelId, admin: req.userId });
+        if (!channel) {
+            return res.status(404).send("Channel not found or you are not authorized to delete the image");
+        }
+        if (channel.image) {
+            try {
+                unlinkSync(channel.image); // Delete the file from the filesystem
+                console.log("Image file deleted:", channel.image);
+            } catch (err) {
+                console.error("Error deleting file:", err);
+                return res.status(500).send("Error deleting image file");
+            }
+        } else {
+            return res.status(400).send("No image to delete");
+        }
+        channel.image = null; // Set the image field to null
+        await channel.save(); // Save the updated document
+
+        return res.status(200).json("Image removed successfully");
+
+    } catch (err) {
+        console.log("Error", err);
+        return res.status(500).send("Remove Image Internal Server Error");
+    }
+}
+
 
 export const getChannelMessages = async (req, res, next) => {
     try {

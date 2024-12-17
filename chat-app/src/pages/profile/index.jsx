@@ -42,30 +42,18 @@ export const Profile = () => {
                     'http://localhost:3004/api/auth/updateProfile',
                     { firstName, lastName },
                     { withCredentials: true },
-
                 );
-
-
                 if (resp.status === 200 && resp.data.id) {
-
                     dispatch(setUserInfo({ ...resp.data }));
                     toast.success("Profile updated successfully");
-
                     navigate("/")
-
-
                 }
                 else {
-
-
                     toast.error("Failed to update profile. Please try again.");
-
                 }
-
             } catch (err) {
                 console.log("Error", err);
                 toast.error("An error occurred while updating the profile.");
-
             }
         }
     }

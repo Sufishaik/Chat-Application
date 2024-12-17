@@ -31,7 +31,7 @@ function App() {
   };
   const AuthRoute = ({ children }) => {
     const isAuthenticated = !!userInfo;
-    return isAuthenticated ? <Navigate to="/chat" /> : children;
+    return isAuthenticated ? <Navigate to="/" /> : children;
   }
 
 
@@ -40,7 +40,7 @@ function App() {
       <RefineKbarProvider>
         <DevtoolsProvider>
           <Refine
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            dataProvider={dataProvider("http://localhost:3004")}
             routerProvider={routerBindings}
             // authProvider={authProvider}
             options={{
@@ -54,7 +54,7 @@ function App() {
               <Route path="/auth" element={<AuthRoute>
                 <Auth />
               </AuthRoute>} />
-              <Route path="/chat" element={<PrivateRoute>
+              <Route path="/" element={<PrivateRoute>
                 <Chat />
                 {/* <ProfileInsta /> */}
               </PrivateRoute>} />

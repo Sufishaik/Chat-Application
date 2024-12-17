@@ -14,23 +14,23 @@ const root = createRoot(container);
 console.log('Initial State:', store.getState());
 
 root.render(
-  // <React.StrictMode>
-  <>
+  <React.StrictMode>
+    <>
 
 
-    <Provider store={store}>
+      <Provider store={store}>
 
-      <SocketProvider>
-        <PersistGate loading={null} persistor={persistor} onBeforeLift={() => {
-          console.log('Persisted State on Load:', store.getState().chat.contacts);
-        }}>
-          <App />
-        </PersistGate>
-      </SocketProvider>
+        <SocketProvider>
+          <PersistGate loading={null} persistor={persistor} onBeforeLift={() => {
+            console.log('Persisted State on Load:', store.getState().chat.contacts);
+          }}>
+            <App />
+          </PersistGate>
+        </SocketProvider>
 
-    </Provider>
-    <Toaster closeButton />
-  </>
+      </Provider>
+      <Toaster closeButton />
+    </>
 
-  // </React.StrictMode>
+  </React.StrictMode>
 );

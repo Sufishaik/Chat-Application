@@ -2,6 +2,7 @@ import { GrAttachment } from "react-icons/gr"
 import { IoSend } from 'react-icons/io5';
 import EmojiPicker from 'emoji-picker-react';
 
+
 import { RiEmojiStickerLine } from 'react-icons/ri';
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -134,8 +135,10 @@ export const SendBTN = () => {
             <div className="h-[10vh]  bg-[#1c1d25] px-8 mb-6 flex justify-center items-center gap-6">
                 <div className="bg-[#2a2b33] rounded-md flex items-center gap-5 pr-5 flex-1 ">
                     <input type="text" placeholder="Enter Message" className="text-white p-5 bg-transparent rounded-md focus:border-none focus:outline-none w-[80%] md:w-full lg:w-full xl:w-full" value={message} onChange={(e) => setMessage(e.target.value)} />
-                    <button className="text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all">
-                        <GrAttachment className="text-white" onClick={handleAttachmentClick} />
+                    <button className=" focus:border-none duration-300 transition-all">
+                        {/* <GrAttachment className="" onClick={handleAttachmentClick} /> */}
+                        {/* <FontAwesomeIcon icon="fa-solid fa-paperclip" /> */}
+                        <i class="fa-solid fa-paperclip"></i>
                     </button>
                     <input type="file" name="" id="" ref={fileInputRef} className="hidden" onChange={handleAttachmentChange} />
                     <div className="relative">

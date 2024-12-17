@@ -37,7 +37,7 @@ export const DirectMsg = () => {
         }
     }, [contacts, dispatch, selectedChatData, selectedChatType])
 
-    console.log("contacts", contacts)
+
 
 
     return (
